@@ -1,13 +1,12 @@
 .header{
 	background-color: #fff;
-	height: 60px;
-	
 }
 
 .header-content{
 	padding-left: 10px;
 	padding-right: 10px;
 	display: flex;
+	height: 60px;
 	.header-menu{
 		display: flex;
 		li{
@@ -56,4 +55,29 @@
 		span+span{margin-top: 5px;}
 	}	
 }
-
+/*games-info*/
+.games-info{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.game-img{
+	width: 21%;
+} 
+.game-desc{
+	width: 44%;
+}
+.games-info-header{
+	
+	display: flex;
+	text-align: center;
+	align-items: center;
+	background: rgb(230, 230, 230);
+	height: 30px;
+	color: gray;
+	font-size: 14.5px;
+	&>*+*{border-left: solid 1px rgb(210, 210, 210);}
+}
+.game-count{width: 15%;} 
+.game-rating{
+	width: 20%;
+}

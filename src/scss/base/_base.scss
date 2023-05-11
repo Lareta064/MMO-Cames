@@ -14,13 +14,13 @@
     font-family: 'Open Sans';
     -webkit-font-smoothing: antialiased;
     }
-    .noscroll {
-    overflow: hidden;
-    touch-action: none;
-    -ms-touch-action: none;
 
+  .h2{
+    font-size: 32px;
+    line-height: 2;
+    text-align: center;
+   
   }
-  
  
   a,
   a:hover {
@@ -123,5 +123,6 @@ a, a:hover{color: inherit}
       object-fit: cover;
     }
 }
-.container{
+.main{
+  padding: 40px 15px;
 }
