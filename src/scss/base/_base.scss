@@ -164,6 +164,11 @@ a, a:hover{color: inherit}
       background:#ffd700;
       color: black;
     }
+    @media (max-width: 767px) {
+      height: 30px;
+      line-height: 30px;
+      font-size: 12px;
+    }
 }
 .text-link{
     font-size: 14.5px;

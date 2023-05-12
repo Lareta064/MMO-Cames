@@ -208,7 +208,7 @@
 				
 			}
 		}
-		.game-rating .rating-block{display: none;}
+		// .game-rating .rating-block{display: none;}
 		.game-desc {
 			width: calc(100% - 100px);
 		}
@@ -289,9 +289,9 @@
 	}
 }
 
-.game-col .rating-block {
-	display: none;
-}
+// .game-col .rating-block {
+// 	display: none;
+// }
 
 
 
@@ -356,6 +356,11 @@
 
 		.game-desc {
 			width: calc(100% - 100px);
+		}
+		.btn {
+			height: 36px;
+			line-height: 36px;
+			font-size: 14px;
 		}
 	}
 		
