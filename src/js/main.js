@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function (){
 			bodyEl.classList.remove('lock');
 
 		});
+		overlayBlock.addEventListener('click', function () {
+			this.classList.remove('active');
+			menuToggle.classList.remove('active');
+			mobMenu.classList.remove('active');
+			bodyEl.classList.remove('lock');
+
+		});
 	}
 	
 	/*=========RATING BLOCK =======*/

@@ -33,19 +33,19 @@ body.lock{overflow: hidden;}
 #overlay.active {
   display: block;
 }
-  .h2{
-    font-size: 32px;
-    line-height: 2;
-    text-align: center;
-    @media (max-width: 1199px) {
-      font-size: 28px;
-    }
-    @media (max-width: 767px) {
-      font-size: 22px;
-      line-height: 1.4;
-    }
-   
+.h2{
+  font-size: 32px;
+  line-height: 2;
+  
+  @media (max-width: 1199px) {
+    font-size: 28px;
   }
+  @media (max-width: 767px) {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+  
+}
  .h3{
   font-size: 26px;
   font-weight: 700;
@@ -194,4 +194,13 @@ a, a:hover{color: inherit}
     &:hover{
       color: #ffd700;
     }
+}
+.text-center{text-align: center;}
+.prev-text, .prev-text p{
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  @media (max-width: 767px) {
+    font-size: 13px;
+  }
 }

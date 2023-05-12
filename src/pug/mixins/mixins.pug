@@ -1,0 +1,31 @@
+mixin card(imgSrc, title, num, rating)
+	.game-card
+		a(href="#!").game-img
+			img(src="./img/"+ imgSrc +".webp", width="400" height="400"  alt="")
+		
+		a(href="#!").game-desc
+			.h3 !{title}
+			block
+
+		.game-count
+			.text-big #{num}+
+			span MILLION
+		
+		
+		.game-rating
+			//===== rating  block=====
+			p.rating-block(data-rating)
+				span.rating-block-passive
+					i
+					i
+					i
+					i
+					i
+				span.rating-block-active(data-count=""+ rating)
+					i
+					i
+					i
+					i
+					i
+			.btn Play now!
+			a(href="#!").text-link Learn more
