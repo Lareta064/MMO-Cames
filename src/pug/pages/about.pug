@@ -1,0 +1,23 @@
+extends ../layouts/layout.pug
+
+block content
+	//================= HEADER =================
+	include ../sections/_header.pug
+	//================ MAIN ==============
+	main.main.pt-70
+		
+		h2.h2 About
+
+		p Thank you for visiting mmoXgames.com. We feel that we provide a unique offering in the crowded video game space of reviews, summaries, and questions all related to just finding a new game. By focusing strictly on MMORPGs we can provide more expert analysis to help meet that goal.
+		
+		.text-small
+			p Simply put, our mission is to quickly provide gamers with easy to read, relevant, and pertinent details on only the best MMOs currently released. In translation, we don’t do full on reviews and we don’t numerically rate games. Every MMORPG provides a particular experience that everybody appreciates in different ways. We only list why you might like a game and provide a link to said game for you to try it yourself. If things don’t work you can always come back to www.whatmmorpg.com.
+			p As stated above, we only list the best MMOs available. So while there are plenty of unique offerings there are also several “clones” with slightly modified graphics or extremely generic content. Seriously, how many fantasy MMORPGs can this world create? We don’t feel it’s fair to list reskinned versions of the same game which just results in giving our users false hope and cluttering the site unnecessarily, thus making it more difficult to quickly find a new game. As part of this effort we also offer professionally written, unique articles to provide interesting view points into the realm of the online RPG. Lastly, customer service is also one of our priorities so if you feel the need to reach out to us please contact us using the contact link at the bottom of the page. We do not operate nor provide support for any of the games on this site. If you have any issues with a particular game or company, please contact their support department for help as we will be unable to assist you.
+	
+	
+	include ../sections/_footer.pug
+	
+	
+	
+block variables
+	-var title = "About";

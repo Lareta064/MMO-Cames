@@ -1,0 +1,38 @@
+.footer{
+	height: 40px;
+	background: rgb(15, 15, 15);
+	text-align: center;
+	line-height: 40px;
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+	column-gap:30px;
+	color: rgb(100, 100, 100);
+	.footer-menu{
+		display: flex;
+		align-items: center;
+		column-gap: 30px;
+
+	}
+	a{
+		color: rgb(100, 100, 100);
+		padding-top: 6px;
+		padding-bottom: 6px;
+		white-space: nowrap;
+		&:hover{
+			color: gold;
+		}
+		
+	}
+	@media (max-width: 767px) {
+		flex-direction: column;
+		height: auto;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		line-height: 1.2;
+		.footer-menu{
+			flex-direction: column;
+			row-gap:12px;
+		}
+	}
+}
