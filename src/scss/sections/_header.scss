@@ -1,5 +1,29 @@
 .header{
 	background-color: #fff;
+	.logo{
+		display: flex;
+		align-items: center;
+	    width: 240px;
+		padding-right: 10px;
+		height: 60px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		img{
+			height: 55px;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			
+		}
+		@media (max-width: 1199px) {
+			width: 180px;
+			height: 50px;
+		}
+		@media (max-width: 767px) {
+			width: 140px;
+			height: 40px;
+		}
+	}
 }
 
 .header-content{
@@ -7,8 +31,16 @@
 	padding-right: 10px;
 	display: flex;
 	height: 60px;
+	@media (max-width: 1199px) {
+	  height: 50px;
+	}
+	@media (max-width: 767px) {
+	height: 40px;
+	}
 	.header-menu{
 		display: flex;
+		margin-left: auto;
+		
 		li{
 			font-size: 16px;
 			display: flex;
@@ -17,12 +49,32 @@
 			a{
 				padding-left: 30px;
 				padding-right: 30px;
+				white-space: nowrap;
 				color: inherit;
+				@media (max-width: 991px) {
+					padding-left: 25px;
+					padding-right: 25px;
+				}
 			}
 			&.active, &:hover{
 				background-color: #ffd700;a{color: inherit}
 			}
 			
+		}
+		@media (max-width: 767px) {
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  width: 100%;
+		  max-width: 360px;
+		  background-color: #fff;
+		  display: block;
+		  z-index: 5;
+		  padding: 50px;
+		  padding-left: 30px;
+		  li{height: 40px;}
+		  transform: translateX(100%);
 		}
 	}
 }
@@ -51,8 +103,18 @@
 			position: relative;
 			width: fit-content;
 			display: block;
+			@media (max-width: 767px) {
+			font-size: 25px;
+			padding: 6px 12px;
+			}
 		}
 		span+span{margin-top: 5px;}
+		@media (max-width: 767px) {
+			bottom: 90px;
+		}
+	}
+	@media (max-width: 767px) {
+		height: 240px;
 	}	
 }
 /*games-info*/
@@ -60,14 +122,14 @@
 	padding-top: 10px;
 	padding-bottom: 20px;
 }
-.game-img{
+.game-col{
 	width: 21%;
 } 
 .game-desc{
 	width: 44%;
 }
 .games-info-header{
-	
+	margin-bottom: 10px;
 	display: flex;
 	text-align: center;
 	align-items: center;
@@ -75,9 +137,267 @@
 	height: 30px;
 	color: gray;
 	font-size: 14.5px;
-	&>*+*{border-left: solid 1px rgb(210, 210, 210);}
+	@media (max-width: 767px) {
+	display: none;
+	}
+	
 }
-.game-count{width: 15%;} 
+.game-card >*+*, .games-info-header>*+*{
+	border-left: solid 1px rgb(210, 210, 210);
+	@media (max-width: 767px) {
+	border-left: 0;
+	}
+}
+.game-count
+{width: 15%;
+	@media (max-width: 1199px) {
+	width: 30%;
+	}
+} 
 .game-rating{
 	width: 20%;
+	@media (max-width: 1199px) {
+		width: 70%;
+	}
+}
+.game-card{
+	display: flex;
+	position: relative;
+	border-bottom: solid 1px #e4e4e4;
+	background: #f3f3f3;
+	margin: 1px 0px;
+	&>*{position: relative;z-index: 2;
+	}
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		left: 0;
+		background: firebrick;
+		transition: .3s;
+		z-index: 1;
+	}
+	&:hover{background-color: #fff;}
+	&:hover:after{
+		left: -10px;
+		width: 10px;
+		@media (max-width: 1199px) {
+			left: -6px;
+			width: 6px;
+		}
+	}
+	.game-col{width: 16%;flex-shrink: 0; display: flex;}
+	.game-img{
+		
+		
+		display: inline-block;
+		img{
+			width: 100%;
+			height: 100%;	
+		}
+	}
+	.game-desc{
+		width: 49%;
+		padding: 10px;
+		padding-right: 20px;
+		font-size: 13px;
+		@media(max-width:1199px){
+			width: 53%;
+		}
+		.h3{
+			margin-bottom: 15px;
+			@media (max-width: 767px) {
+				margin-bottom: 8px;
+				font-size: 18px;
+				
+			}	
+		}
+		@media (max-width: 767px) {
+			
+			padding-right: 10px;
+		}
+		p{
+			display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+		}
+	}
+	.game-rating,	.game-count{
+		display: flex;
+		align-items:center;
+		flex-direction: column;
+		justify-content: center;
+		@media (max-width: 767px) {
+		padding-bottom: 10px;
+		justify-content: flex-end;
+		}
+	}
+	.game-count {
+		color: rgb(120, 100, 80);
+		
+		font-weight: bold;
+		.text-big{
+			font-size: 45px;
+			@media (max-width: 1199px) {
+			font-size: 38px;
+			}
+		}
+		span{
+			font-size: 12px;
+			text-transform: uppercase;
+			margin-top: -10px;
+		}
+	}
+	.game-rating{
+		row-gap:5px;
+		.text-link {
+				font-size: 12px;
+			}
+	  @media (max-width: 767px) {
+		row-gap: 4px!important;
+	  }
+	}
+	.game-col .rating-block {
+		display: none;
+	}
+	@media (max-width: 767px) {
+		flex-wrap:wrap;
+		.game-col{
+			width: 80px;
+			padding-top: 10px;
+			padding-left: 10px;
+			display: block;
+			.game-img{
+				height: 85px;
+				width: 100%;
+				margin-right: 0;
+			}
+			
+			.rating-block{
+				display: block;
+				.rating-block-active i,
+				.rating-block-passive i{width: 14px; height: 25px;}
+			}
+		}
+		.game-rating .rating-block{display: none;}
+		.game-desc {
+			width: calc(100% - 100px);
+		}
+	}	
+}
+
+
+.game-card:first-child{
+	background-color: #fff;
+	box-shadow: 0px 0px 50px -20px black;
+	border: solid 2px firebrick;
+	margin-bottom: 20px;
+	.game-col{width: 21%; display: flex;}
+	.game-desc{width: 44%;
+		p{
+			display: -webkit-box;
+				-webkit-line-clamp: 5;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				font-size: 14.4px;
+				@media (max-width: 767px) {
+					-webkit-line-clamp: 4;
+					font-size: 13px;
+				}
+		}
+	}
+	.game-count {
+		color: rgb(0, 0, 0);
+
+		.text-big {
+			font-size: 56px;
+			@media (max-width: 1199px) {
+				font-size: 48px;
+			}
+		}
+
+		span {
+			font-size: 14px;
+			
+		}
+	}
+
+	.game-rating {
+		row-gap: 10px;
+		
+		.btn{
+			height: 42px;
+			line-height: 42px;
+			font-size: 16px;
+		}
+	}
+	.rating-block .rating-block-active i,
+	.rating-block .rating-block-passive i{
+		width: 16px;
+		height: 25px;
+	}
+	@media (max-width: 767px) {
+		flex-wrap: wrap;
+		box-shadow: none;
+		.game-col {
+			width: 100px;
+			display: block;
+			.game-img {
+				height: 100px;
+				width: 100%;
+			}
+
+		}
+
+		.game-desc {
+			width: calc(100% - 100px);
+		}
+	}
+		
+}
+@media (max-width: 767px) {
+  .game-card + .game-card{margin-top: 8px;}
+}
+/*==== rating-block =====*/
+.rating-block {
+	position: relative;
+	height: 20px;
+	width: 100px;
+}
+
+.rating-block span {
+	width: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: 20px;
+	display: flex;
+	overflow: hidden;
+}
+
+.rating-block .rating-block-passive {
+	z-index: 2;
+}
+
+
+.rating-block .rating-block-active i,
+.rating-block .rating-block-passive i {
+	width: 20px;
+	height: 18px;
+	flex-shrink: 0;
+	display: inline-block;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.54894 0.927052C7.8483 0.0057416 9.1517 0.00573945 9.45106 0.92705L10.6329 4.56434C10.7668 4.97636 11.1507 5.25532 11.5839 5.25532H15.4084C16.3771 5.25532 16.7799 6.49494 15.9962 7.06434L12.9021 9.31231C12.5516 9.56695 12.405 10.0183 12.5389 10.4303L13.7207 14.0676C14.02 14.9889 12.9656 15.7551 12.1818 15.1857L9.08779 12.9377C8.7373 12.6831 8.2627 12.6831 7.91222 12.9377L4.81815 15.1857C4.03444 15.7551 2.97996 14.9889 3.27931 14.0676L4.46114 10.4303C4.59501 10.0183 4.44835 9.56695 4.09787 9.31231L1.00381 7.06434C0.220092 6.49494 0.622867 5.25532 1.59159 5.25532H5.41606C5.84929 5.25532 6.23324 4.97636 6.36712 4.56434L7.54894 0.927052Z' fill='%23ffd700'/%3e%3c/svg%3e ");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.rating-block .rating-block-passive i {
+
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.54894 0.927052C7.8483 0.0057416 9.1517 0.00573945 9.45106 0.92705L10.6329 4.56434C10.7668 4.97636 11.1507 5.25532 11.5839 5.25532H15.4084C16.3771 5.25532 16.7799 6.49494 15.9962 7.06434L12.9021 9.31231C12.5516 9.56695 12.405 10.0183 12.5389 10.4303L13.7207 14.0676C14.02 14.9889 12.9656 15.7551 12.1818 15.1857L9.08779 12.9377C8.7373 12.6831 8.2627 12.6831 7.91222 12.9377L4.81815 15.1857C4.03444 15.7551 2.97996 14.9889 3.27931 14.0676L4.46114 10.4303C4.59501 10.0183 4.44835 9.56695 4.09787 9.31231L1.00381 7.06434C0.220092 6.49494 0.622867 5.25532 1.59159 5.25532H5.41606C5.84929 5.25532 6.23324 4.97636 6.36712 4.56434L7.54894 0.927052Z' fill='%23C6DADB'/%3e%3c/svg%3e");
 }

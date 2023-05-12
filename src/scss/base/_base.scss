@@ -12,6 +12,7 @@
     padding: 0;
     width: 100%;
     font-family: 'Open Sans';
+    line-height: normal;
     -webkit-font-smoothing: antialiased;
     }
 
@@ -19,9 +20,22 @@
     font-size: 32px;
     line-height: 2;
     text-align: center;
+    @media (max-width: 1199px) {
+      font-size: 28px;
+    }
+    @media (max-width: 767px) {
+      font-size: 22px;
+      line-height: 1.4;
+    }
    
   }
- 
+ .h3{
+  font-size: 26px;
+  font-weight: 700;
+  @media (max-width: 1199px) {
+      font-size: 20px;
+    }
+ }
   a,
   a:hover {
 	text-decoration: none;
@@ -93,19 +107,19 @@ a, a:hover{color: inherit}
         left: 0;
         right:0;
         width: 100%;
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         transition:.3s;
         background: rgba(0, 0, 0, 0.5);
       }
       &:hover:after{
-        transform: translateX(0);
+        transform: translateY(0);
       }
   }
     .right-link{
       left: auto;
       right: 0;
       &:after {
-        transform: translateX(100%);
+        transform: translateY(100%);
       }
     }
 }
@@ -122,7 +136,40 @@ a, a:hover{color: inherit}
     img{
       object-fit: cover;
     }
+  @media (max-width: 767px) {
+  box-shadow: none;
+  }
 }
 .main{
-  padding: 40px 15px;
+  padding: 40px 50px;
+  @media (max-width: 1199px) {
+    padding: 30px 20px;
+  }
+  @media (max-width: 767px) {
+  padding: 30px 15px;
+  }
+}
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    background:firebrick;
+    padding: 0 20px;
+    transition: 0.2s;
+    height: 38px;
+    line-height: 38px;
+    font-size: 13px;
+    text-transform: uppercase;
+    &:hover{
+      background:#ffd700;
+      color: black;
+    }
+}
+.text-link{
+    font-size: 14.5px;
+    color: rgb(100, 100, 100);
+    transition: .3s;
+    &:hover{
+      color: #ffd700;
+    }
 }

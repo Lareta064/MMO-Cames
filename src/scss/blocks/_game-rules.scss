@@ -1,0 +1,21 @@
+.game-rules{
+	padding: 40px;
+	color: #808080;
+	p{
+		font-size: 13px;
+		
+	}
+	p+p{margin-top: 10px;}
+	
+	h3{margin-top: 10px; font-size: 15px;}
+	h2{margin: 10px 0px 5px 0px;
+		font-size: 19.2px;
+	}
+	@media (max-width: 1199px) {
+	padding: 20px;
+	}
+}
+.border-block{
+	border-left: 3px solid gold;
+	padding-left: 10px;
+}
