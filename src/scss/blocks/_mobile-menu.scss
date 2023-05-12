@@ -1,35 +1,76 @@
-.toggle-menu{
+/*========GAMBURGER======*/
+.toggle-menu {
 	display: none;
-	@media (max-width: 767px) {
-		position: fixed;
-		display: flex;
-		width: 25px;
-		height: 25px;
-		top: 8px;
-		right: 15px;
-		z-index: 7;
-		justify-content: center;
-		align-items: center;
-		span{
-			height: 2px;
-			width: 100%;
-			background-color: firebrick;;
-			position: relative;
-			&:before,&:after{
-				content:'';
-				position: absolute;
-				top: -8px;
-				height: 2px;
-				background-color: firebrick;;
-				left: 0;
-				width: 100%;
-			}
-			&:after{
-				top: auto;
-				bottom: -8px;
-			}
-			
-		}
+	position: fixed;
+	right: 15px;
+	top: 3px;
+	z-index: 100;
+	cursor: pointer;
+}
+
+@media (max-width: 767px) {
+	.toggle-menu {
+		display: block;
+		text-align: center;
+		margin-left: 15px;
+		width: 35px;
+		height: 35px;
+
 	}
-	
+}
+
+
+.toggle-menu span {
+	position: absolute;
+	display: block;
+	width: 35px;
+	height: 3px;
+	background-color:firebrick;;
+	top: 16px;
+
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+
+.toggle-menu span:after,
+.toggle-menu span:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	height: 3px;
+	background-color: firebrick;;
+
+	right: 0;
+	-webkit-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+
+.toggle-menu span:after {
+	top: -8px;
+}
+
+.toggle-menu span:before {
+	bottom: -8px;
+}
+
+.toggle-menu.active span {
+	background-color: transparent;
+}
+
+.toggle-menu.active span:after {
+	top: 0px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background-color: firebrick;;
+}
+
+.toggle-menu.active span:before {
+	bottom: 0px;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	background-color: firebrick;;
 }
